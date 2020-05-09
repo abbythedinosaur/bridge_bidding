@@ -17,6 +17,11 @@ that suit, which is determiend by high card points (HCP). These are calculated a
   queen: 2 points
   jack: 1 point
 
-Once you input those variables, the program will determine whether the hand is balanced or unbalanced, move to the appropriate
-if/elif structure, and produce a suggested bid. 
+To use this program, first you will need to be able to run python on your computer. This program requires user input, so I reccomend using an environment that has a reasonable user interface (I used PyCharm). Next, you will need your deck of cards. Deal yourself a hand of 13 cards. The program will ask how many cards you have in each particular suit, starting with clubs, along with how many points you have in each suit (calculated using the point system listed above). Input the length of each suit, and then how many points are in that suit. Once you get to spades, the program will know how many cards you have left. All you will need to do is input the number of points you have in spades. 
+
+Please be sure to only input whole, positive numbers (the program will reject anything that is not a positive integer). 
+
+Once you have input the card counts and points into the program, it will tell you how you should bid as opening bidder. This program can be used for practice (learning to bid properly is difficult!), or during a casual game of bridge, when your partner and opposing team do not mind a little technological support. 
+
+
 
