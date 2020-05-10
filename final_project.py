@@ -3,6 +3,8 @@
 #note: ace = 4 points, king = 3 points, queen = 2 points, jack = 1 point
 #all other cards = 0 points
 
+
+# user input section for card length and strength
 while True:
     try:
         club_count = eval(input("How many clubs do you have? "))
@@ -88,7 +90,9 @@ while True:
         break
     except ValueError:
         print("Not a valid number, try again")
-
+        
+        
+# sum of all points in all suits
 total_points = (club_points + diamond_points + heart_points + spade_points)
 print("Your hand has", total_points, "points")
 
@@ -122,7 +126,7 @@ longest_suit = suits[longest_suit_index]
 longest_suit_sing = suit_sing[longest_suit_index]
 strongest_suit_sing = suit_sing[strongest_suit_index]
 
-
+# a tree to determine if a hand is balanced or unbalanced
 for i in suit_count_list:
     if i > 4:
         hand = "unbalanced"
@@ -138,6 +142,7 @@ for i in suit_count_list:
         hand = "balanced"
 print("Your hand is", hand)
 
+# this tree determines bidding if a hand is balanced
 if hand == "balanced":
     if total_points >= 20:
         print("Bid 2 no trump")
@@ -178,7 +183,7 @@ if hand == "balanced":
     else:
         print("Welp")
 
-
+# this tree determines bidding if a hand is unbalanced
 if hand == "unbalanced":
     if total_points >= 22:
         print("Bid 2 clubs")
