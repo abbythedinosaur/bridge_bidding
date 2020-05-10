@@ -90,6 +90,7 @@ while True:
         print("Not a valid number, try again")
 
 total_points = (club_points + diamond_points + heart_points + spade_points)
+print("Your hand has", total_points, "points")
 
 # a list of the suits, to be indexed later
 suits = ["clubs", "diamonds", "hearts", "spades"]
@@ -183,6 +184,8 @@ if hand == "unbalanced":
         print("Bid 2 clubs")
     elif total_points >= 13:
         if longest_suit_int >= 5:
+            if longest_suit == "spades":
+                print("Bid 1 spade")
             if longest_suit == "hearts":
                 if spade_count == heart_count:
                     if heart_points >= spade_points:
@@ -193,12 +196,27 @@ if hand == "unbalanced":
                         print("Bid 1 heart")
                     else:
                         print("Welp")
+                elif heart_count > spade_count:
+                    print("Bid 1 heart")
+            elif longest_suit == "diamonds":
+                if diamond_count == heart_count:
+                    print("Bid 1 heart")
+                elif diamond_count > heart_count:
+                    print("Bid 1 diamond")
+            elif longest_suit == "clubs":
+                if diamond_count == club_count:
+                    if diamond_points >= club_points:
+                        print("Bid 1 diamond")
+                    elif club_points > diamond_points:
+                        print("Bid 1 club")
+                elif club_count > diamond_count:
+                    print("Bid 1 club")
         elif longest_suit_int < 5:
             if diamond_count >= 3:
                 print("Bid 1 diamond")
             elif club_count >=3:
                 print("Bid 1 club")
-    elif total_points <13:
+    elif total_points < 13:
         print("Pass")
     else:
         print("Welp")
